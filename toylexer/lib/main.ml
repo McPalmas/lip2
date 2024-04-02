@@ -23,5 +23,17 @@ let string_of_tokenlist tl =
 let string_of_frequencies fl =
   List.fold_left (fun s (t,n) -> s ^ ((string_of_token t) ^ " -> " ^ string_of_int n ^ "\n")) "" fl
 
+
+let rec inc((freqdic : (token * int) list...
+
+let frequency1 tokenlist = List.fold_left (fun acc t -> int acc t) [] token list
+
+Let rec take n = function
+| [] -> []
+| _ when n=0 -> []
+| x::t -> x::(take (n-1) t)
+
 (* frequency : int -> 'a list -> ('a * int) list *)
-let frequency _ _ = failwith("TODO")
+let frequency n token list = frequency1 tokenlist
+  |> List.sort (fun (_,n1) (_,n2) -> compare n1 n2)
+  |> take n
